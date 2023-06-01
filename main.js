@@ -41,4 +41,32 @@ const playRound(playerSelection, computerSelection) {
                 flag = true;
         }
     }
+    if (computer === player) {
+        return "tie!";
+    }
+    if (computer === 1) {
+        if (player === 2) {
+            return "player wins!";
+        } else if (player === 3) {
+            return "computer wins!";
+        }
+    }
+    if (computer === 2) {
+        if (player === 3) {
+            return "player wins!";
+        } else if (player === 1) {
+            return "computer wins!";
+        }
+    }
+    if (computer === 3) {
+        if (player === 1) {
+            return "player wins!";
+        } else if (player === 2) {
+            return "computer wins!";
+        }
+    }
 }
+
+const playerSelection = prompt();
+const computerSelection = getComputerChoice();
+console.log(playRound(playerSelection, computerSelection));
