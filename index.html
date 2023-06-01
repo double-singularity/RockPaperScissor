@@ -5,6 +5,7 @@
     <style>
         /* CSS styles for the game display */
         body {
+            background-color: bisque;
             text-align: center;
             font-family: Arial, sans-serif;
         }
@@ -16,14 +17,23 @@
         #game-area {
             margin-top: 50px;
         }
+
+        div button {
+            margin: 10px;
+        }
+
     </style>
 </head>
 <body>
 
     <h1>Rock Paper Scissors</h1>
     <div id="game-area">
-        <h1 id="lol"></h1>
+        <button onclick="makeMove(1)">ROCK</button>
+        <button onclick="makeMove(2)">PAPER</button>
+        <button onclick="makeMove(3)">SCISSORS</button>
         <h1 id="result"></h1>
+        <button id="yes"></button>
+        <button id="no"></button>
     </div>
 
     <script src="main.js"></script>

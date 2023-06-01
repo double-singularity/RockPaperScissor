@@ -2,25 +2,7 @@ var playerAggregate = 0, computerAggregate = 0;
 var winner;
 
 function playRound(playerSelection, computerSelection) {
-    let player;
-
-    playerSelection = playerSelection.toLowerCase();
-
-    switch (playerSelection) {
-        case "rock":
-            player = 1;
-            flag = false;
-            break;
-        case "paper":
-            player = 2;
-            flag = false;
-            break;
-        case "scissors":
-            player = 3;
-            flag = false;
-            break;
-        default:
-    }
+    const player = playerSelection;
 
     let computer = computerSelection;
     
@@ -64,19 +46,26 @@ function computerPlay() {
     return randomIndex;
 }
 
-while (true) {
+function makeMove(playerSelection) {
     const computerSelection = computerPlay();
-    const playerSelection = prompt("select your choice!");
     const result = playRound(playerSelection, computerSelection);
     document.getElementById("result").innerHTML = result;
-    if (playerAggregate === 3 || playerAggregate === 3) {
+    if (playerAggregate === 3 || computerAggregate === 3) {
         if (playerAggregate === 3) {
             winner = 0;
         } else winner = 1;
-        break;
+        showWinner();
     }
 }
 
-const choice = ["Player", "Computer"];
+function setButton() {
+    document.getElementById("yes").innerHTML = "yes";
+    document.getElementById("no").innerHTML = "no";
+}
 
-document.getElementById("result").innerHTML = "The winner is " + choice[winner] + "!!";
+function showWinner() {
+    const choice = ["Player", "Computer"];
+    document.getElementById("result").innerHTML = "The winner is " + choice[winner] + "!!";
+    document.getElementById("result").innerHTML = "Wanna try again?";
+    setButton();
+}
