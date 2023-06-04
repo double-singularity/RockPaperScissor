@@ -1,0 +1,15 @@
+html {
+    background: floralwhite;
+}
+
+.alert-text {
+    color: red;
+}
+
+#title {
+    color: black;
+}
+
+div {
+    display: inline;
+}
