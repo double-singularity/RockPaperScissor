@@ -58,9 +58,24 @@ function makeMove(playerSelection) {
     }
 }
 
+function removeButton() {
+    const parent = document.getElementById("game-area");
+    const child1 = document.getElementById("removeButton()")
+    parent.remove(child1); parent.remove(child1);
+}
+
 function setButton() {
-    document.getElementById("yes").innerHTML = "yes";
-    document.getElementById("no").innerHTML = "no";
+    const para1 = document.createElement("button");
+    const para2 = document.createElement("button");
+    const node1 = document.createTextNode("yes");
+    const node2 = document.createTextNode("no");
+    para1.appendChild(node1);
+    para2.appendChild(node2);
+    const element = document.getElementById("game-area");
+    para1.setAttribute("id", "removeButton()");
+    para2.setAttribute("id", "removeButton()");
+    element.appendChild(para1);
+    element.appendChild(para2);
 }
 
 function showWinner() {
